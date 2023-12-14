@@ -1,0 +1,26 @@
+{
+  "name": "cypressjenkins2",
+  "version": "1.0.0",
+  "description": "Cypress, prueba para jenkins",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --e2e --browser chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/edme88/CypressJenkins2.git"
+  },
+  "keywords": [
+    "Jenkins",
+    "Cypress"
+  ],
+  "author": "Darwoft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edme88/CypressJenkins2/issues"
+  },
+  "homepage": "https://github.com/edme88/CypressJenkins2#readme",
+  "dependencies": {
+    "cypress": "^13.6.1"
+  }
+}
