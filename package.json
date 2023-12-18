@@ -4,7 +4,8 @@
   "description": "Cypress, prueba para jenkins",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --e2e --browser chrome"
+    "test": "npx cypress run --e2e --browser chrome || ver>nul",
+    "generateTxt": "node generateConsoleReport.js"
   },
   "repository": {
     "type": "git",
