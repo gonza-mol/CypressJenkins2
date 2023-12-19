@@ -1,0 +1,38 @@
+pipeline{
+   agent any
+   
+   stages{
+       stage('Clone sources') {
+             steps {
+                 git url: 'https://github.com/gonza-mol/CypressJenkins2.git',  branch: 'master'
+            }
+        }
+       
+       stage("Instalar Dependencias"){
+           steps{
+               bat "npm ci"
+               
+  
+              }
+        }
+        
+        stage("Ejecutar tests"){
+           steps{
+               script{
+                   try{
+                       bat "npx cypress run --e2e --browser chrome"
+                   }
+                   catch(Exception e){
+                       echo "error durante la ejecución de los test"
+                   }
+                }
+        }
+    }
+        stage("Generar reportes en la consola y el txt"){
+           steps{
+               bat "node generateConsoleReport.js"
+                }
+            }
+    }
+    
+ }
