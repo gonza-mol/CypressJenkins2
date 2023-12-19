@@ -17,7 +17,7 @@ pipeline{
         }
         
         stage("Ejecutar tests"){
-           parallell {
+           parallel {
                 stage("Ejecución en Chrome"){ 
                     steps{
                         script{
