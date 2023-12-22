@@ -1,9 +1,9 @@
-describe("Tests de Prueba para Jenkins", () => {
-  it("Test que PASA", () => {
+describe("Tests de Prueba para Jenkins", { tags: "@regression"}, () => {
+  it("Test que PASA", { tags: ["@primero", "@pasara"]},() => {
     cy.visit("https://example.cypress.io");
   });
 
-  it("Test que FALLA", () => {
+  it("Test que FALLA", { tags: "@fallara"},() => {
     cy.visit("https://example.cypress.io");
     cy.get("h1").should("have.text", "Hola Mundo!");
   });
