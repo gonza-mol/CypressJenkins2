@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress run --e2e --browser chrome || ver>nul",
-    "test2": "npx cypress run --e2e --browser firefox --env grepTags=\"@pasara\"",
+    "test2": "npx cypress run --e2e --browser chrome --env grepTags=\"@pasara\"",
     "generateTxt": "node generateConsoleReport.js"
   },
   "repository": {
