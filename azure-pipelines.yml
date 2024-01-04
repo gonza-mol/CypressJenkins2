@@ -8,10 +8,6 @@ parameters:
     displayName: Pool image 
     type: string
     default: ubuntu-latest
-    values: 
-      - windows-latest
-      - ubuntu-latest
-      - macOS-latest
 
 trigger:
 - master
