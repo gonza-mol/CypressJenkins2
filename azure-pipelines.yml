@@ -11,13 +11,10 @@ parameters:
     values: 
       - windows-latest
       - ubuntu-latest
-      - macOs-latest
+      - macOS-latest
 
 trigger:
 - none
-
-pool:
-  vmImage: ${{ parameters.image }}
 
 jobs:
   - job: installNode
@@ -34,3 +31,8 @@ jobs:
       - script: |
           npm ci
           npx cypress run --e2e --browser chrome
+
+  - job: Parameters
+    pool:
+      vmImage: ${{ parameters.image }}
+      continueOnError: false
