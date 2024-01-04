@@ -3,19 +3,34 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+parameters:
+  - name: image
+  - displayName: Pool image 
+  - type: string
+  - defaul: ubuntu-latest
+  - values: 
+    - windows-latest
+    - ubuntu-latest
+    - macOs-latest
+
 trigger:
-- master
+- none
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: ${{ parameters.image }}
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '16.15.0'
-  displayName: 'Install Node.js'
+jobs:
+  - job: installNode
+    displayName: 'Install Node.js'
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '16.15.0'
 
-- script: |
-    npm ci
-    npx cypress run --e2e --browser chrome
-  displayName: 'npm install and build'
+  - job: RunNpmCi
+    displayName: 'npm ci'
+    dependsOn: installNode
+    steps:
+      - script: |
+          npm ci
+          npx cypress run --e2e --browser chrome
