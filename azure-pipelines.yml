@@ -14,7 +14,7 @@ parameters:
       - macOS-latest
 
 trigger:
-- none
+- master
 
 jobs:
   - job: Parameters
