@@ -7,7 +7,7 @@ parameters:
   - name: image
     displayName: Pool image 
     type: string
-    defaul: ubuntu-latest
+    default: ubuntu-latest
     values: 
       - windows-latest
       - ubuntu-latest
