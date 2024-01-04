@@ -9,9 +9,9 @@ parameters:
     type: string
     defaul: ubuntu-latest
     values: 
-    - windows-latest
-    - ubuntu-latest
-    - macOs-latest
+      - windows-latest
+      - ubuntu-latest
+      - macOs-latest
 
 trigger:
 - none
