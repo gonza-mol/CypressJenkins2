@@ -13,11 +13,6 @@ trigger:
 - master
 
 jobs:
-  - job: Parameters
-    displayName: MultiplesParametros
-    pool:
-      vmImage: ${{ parameters.image }}
-      
   - job: installNode
     displayName: 'Install Node.js'
     steps:
