@@ -5,10 +5,10 @@
 
 parameters:
   - name: image
-  - displayName: Pool image 
-  - type: string
-  - defaul: ubuntu-latest
-  - values: 
+    displayName: Pool image 
+    type: string
+    defaul: ubuntu-latest
+    values: 
     - windows-latest
     - ubuntu-latest
     - macOs-latest
