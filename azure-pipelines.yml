@@ -18,6 +18,7 @@ trigger:
 
 jobs:
   - job: Parameters
+    displayName: MultiplesParametros
     pool:
       vmImage: ${{ parameters.image }}
       
