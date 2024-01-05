@@ -3,6 +3,16 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+parameters:
+  - name: image
+    displayName: Pool image
+    type: string
+    default: ubuntu-latest
+    values:
+      - windows-latest
+      - ubuntu-latest
+      - macOS-lates
+
 trigger:
 - none
 
@@ -10,6 +20,11 @@ pool:
   vmImage: ubuntu-latest
 
 jobs:
+  - job: Parameters
+    displayName: MultiplesParametros
+    pool:
+      vmImage: ${{ parameters.image }}
+
   - job: installNode
     displayName: 'Install Node.js'
     steps:
