@@ -25,15 +25,11 @@ parameters:
 trigger:
 - none
 
-variables:
-  - name: vmImage
-    value: ${{ parameters.image }}
-
 jobs:
   - job: installNode
     displayName: 'Install Node.js'
     pool:
-      vmImage: $(vmImage)
+      vmImage: ${{ parameters.image }}
     steps:
     - task: NodeTool@0
       inputs:
@@ -45,4 +41,4 @@ jobs:
     steps:
       - script: |
           npm ci
-          npx cypress run --e2e --browser chrome
+          npx cypress run --e2e --browser ${{ parameters.navegador }}
