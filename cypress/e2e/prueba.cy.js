@@ -11,4 +11,11 @@ describe("Tests de Prueba para Jenkins", { tags: "@regression"}, () => {
   it.skip("Test que NO SE EJECUTA", () => {
     cy.visit("https://example.cypress.io");
   });
+
+  it("Variable de ambiente", { tags: "@pasara"}, () => {
+    const user = Cypress.env()["user_TEST"];
+    const pass = Cypress.env()["pass_TEST"];
+    cy.log(user);
+    cy.log(pass);
+  });
 });

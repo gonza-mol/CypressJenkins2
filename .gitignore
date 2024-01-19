@@ -1,3 +1,4 @@
 node_modules
 cypress/screenshots/
 reports
+cypress.env.json
