@@ -1,0 +1,21 @@
+name: push in branch master
+
+on: 
+  push: 
+    branches: 
+      master
+
+jobs: 
+    run-tests-prueba:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4.1.1
+
+        - name: instalar las dependencias
+          run: npm ci
+
+        - name: correr los test de cypress
+          run: npx cypress run --e2e --browser chrome
+          
