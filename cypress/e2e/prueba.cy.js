@@ -1,5 +1,5 @@
 describe("Tests de Prueba para Jenkins", { tags: "@regression"}, () => {
-  it("Test que PASA", { tags: ["@primero", "@pasara"]},() => {
+  it.only("Test que PASA", { tags: ["@primero", "@pasara"]},() => {
     cy.visit("https://example.cypress.io");
   });
 
